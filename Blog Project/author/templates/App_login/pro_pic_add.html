@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title_block %} Change_picture {% endblock %}
+{% block body_block %}
+<div class="container">
+ <h2>Add your profile picture</h2>
+ <form method="POST" enctype="multipe/form-data">
+ {{ form }}
+ {% csrf_token %}
+ <button type="submit" class="btn btn-success btn-sm">Add</button>
+ 
+ 
+ </form>
+
+
+</div>
+{% endblock %}

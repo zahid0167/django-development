@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title_block %} Password Change {% endblock %}
+{% block body_block %}
+  <div class="container">
+  {% if changed %}
+  <div class="alert alert-success">
+   <p>Password Changed succefully.......</p>
+  </div>
+  {% else %}
+  <div class="alert alert-danger">
+   <p>Password Changed not succefully.......</p>
+  </div>
+  {% endif %}
+   {{ form }}
+
+  </div>
+{% endblock %}

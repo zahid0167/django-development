@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title_block %} Blog_Details {% endblock %}
+{% block body_block %}
+<div class="row">
+<div class='col-sm-6' style="background-color:green">
+<h2>{{ blog.blog_title }}</h2>
+<h4>@{{ blog.author }}</h4>
+<i><h6>Published_date : {{ blog.publish_date }}</h5></i>
+<i><h6>Updated_date : {{ blos.update_date }}</h5></i>
+</div>
+ <div class="col-sm-6" style="background-color:blue">
+  <p>{{ blog.blog_content }}</p>
+ 
+ </div>
+ <div class="row">
+  <div class="col-sm-6">
+  <h5>Coment:</h5>
+  {% for comment in blog.blog_comment.all %}
+  <p><a>@{{comment.user}}</a></p>
+  {{comment.comment}}<br><h6>{{comment.coment_date}}</h6>
+  {% endfor %}
+  </div>
+  <div class="col-sm-6">
+   <form method="POST">
+   
+    {{ comment_form}}
+   {% csrf_token %}
+   <button type="submit" class="btn btn-primary btn-sm">Comment</button>
+   </form>
+  </div>
+ 
+ </div>
+
+</div>
+
+
+{% endblock %}

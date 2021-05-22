@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title_block %} Write Blog{% endblock %}
+
+{% block body_block %}
+<h2>Write Your Blog !!!!!</h2>
+<form method="POST">
+ {{ form }}
+ {% csrf_token %}
+ <button type="submit" class="btn btn-success btn-sm">Published</button>
+
+
+</form>
+
+{% endblock %}
